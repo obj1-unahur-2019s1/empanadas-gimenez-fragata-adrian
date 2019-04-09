@@ -1,4 +1,4 @@
-object gimenez {
+object galvan {
 	var sueldo = 15000
 	var deuda = 0
 	var dinero = 0
@@ -39,12 +39,13 @@ object baigorria {
 	method totalCobrado() { return sueldo }
 }
 
-object galvan {
+object gimenez {
 	var dinero = 300000
 	
 	method dinero() { return dinero }
 	method pagarA(empleado) {
     dinero -= empleado.sueldo()
     empleado.cobrarSueldo()
+    return dinero
 	}
 }
