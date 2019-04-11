@@ -3,16 +3,15 @@ object galvan {
 	var deuda = 0
 	var dinero = 0
 	
-	method sueldo() { return 15000 }
+	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 	method cobrarSueldo() { 
 		dinero += self.sueldo() 	//agrega el sueldo a "dinero"
 		self.pagarDeuda()
 		}
 	method gastar(cuanto) { 
-		if(cuanto < dinero) { dinero -= cuanto }
-		if(cuanto > dinero) { deuda += cuanto }
-		self.pagarDeuda()
+		if(cuanto < dinero) { dinero -= cuanto } //si lo que gasto es menos que mi "dinero" se lo resta a "dinero"
+		if(cuanto > dinero) { deuda += cuanto }  //si lo que gasto es mas que mi "dinero" aumenta mi "deuda"
 	}
 	method pagarDeuda() {
 		if(deuda < dinero) { 		//Si la deuda es menor que su dinero 
@@ -29,14 +28,14 @@ object galvan {
 }
 
 object baigorria {
-	var sueldo = 0
+	var dinero = 0
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
 	
 	method venderEmpanada() { cantidadEmpanadasVendidas += 1 }
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
-	method cobrarSueldo() { sueldo += self.sueldo() }
-	method totalCobrado() { return sueldo }
+	method cobrarSueldo() { dinero += self.sueldo() }
+	method totalCobrado() { return dinero }
 }
 
 object gimenez {
